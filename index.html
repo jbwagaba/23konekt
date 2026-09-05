@@ -1,697 +1,420 @@
-<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>23Konekt Tours & Travel — Connecting You to the World</title>
-    <meta name="description" content="23Konekt Tours & Travel — Uganda-based premium travel partner for passports, visas, flights, hotels, car hire, insurance and personalized travel planning. Your Journey, Our Priority." />
-    <meta property="og:title" content="23Konekt Tours & Travel — Connecting You to the World" />
-    <meta property="og:description" content="Passport assistance, visa processing, flights, hotels, cars & full travel planning. Any destination. Any purpose. One trusted partner." />
-    <meta property="og:type" content="website" />
-    <script data-arena-recording="true">(function(){
-"use strict";
-var SK="__arena_rec",RRWEB_CDN="https://cdn.jsdelivr.net/npm/rrweb@2.0.0-alpha.4/dist/rrweb.min.js";
-var MAX_RECORDING_MS=600000,MAX_RRWEB_EVENTS=30000,MAX_INTERACTIONS=5000,MAX_CURSOR_POINTS=10000,recStopped=false;
-var stored=null;try{var raw=sessionStorage.getItem(SK);if(raw)stored=JSON.parse(raw);}catch(ex){}
-var meta=stored?stored.m||null:null,rrwebEvents=stored?stored.r||[]:[],rrwebStarted=false,startTime=stored?stored.st||Date.now():Date.now();
-var interactions=stored?stored.i||[]:[],cursorPath=stored?stored.c||[]:[],lastCursorSample=0,lastScrollSample=0;
-var pageHeight=document.documentElement.scrollHeight;
-var viewport={width:window.innerWidth,height:window.innerHeight};
-function isCapped(){if(recStopped)return true;if(Date.now()-startTime>=MAX_RECORDING_MS){recStopped=true;return true;}return false;}
-function persist(){try{var d=JSON.stringify({r:rrwebEvents,i:interactions,c:cursorPath,m:meta,st:startTime});sessionStorage.setItem(SK,d);}catch(ex){rrwebEvents=rrwebEvents.slice(Math.floor(rrwebEvents.length/2));try{sessionStorage.setItem(SK,JSON.stringify({r:rrwebEvents,i:interactions,c:cursorPath,m:meta,st:startTime}));}catch(ex2){}}}
-setInterval(persist,5000);
-window.addEventListener("resize",function(){viewport={width:window.innerWidth,height:window.innerHeight};pageHeight=document.documentElement.scrollHeight;});
-document.addEventListener("click",function(e){if(isCapped()||interactions.length>=MAX_INTERACTIONS)return;var el=e.target;var tag=el.tagName?el.tagName.toLowerCase():"";var text=(el.textContent||"").trim().substring(0,80);var classes=el.className&&typeof el.className==="string"?el.className.substring(0,120):"";interactions.push({type:"click",t:Date.now()-startTime,x:Math.round(e.clientX),y:Math.round(e.clientY),element:{tag:tag,text:text,classes:classes}});},true);
-window.addEventListener("scroll",function(){if(isCapped()||interactions.length>=MAX_INTERACTIONS)return;var now=Date.now();if(now-lastScrollSample<200)return;lastScrollSample=now;var scrollY=Math.round(window.scrollY||window.pageYOffset||0);var depthPct=pageHeight>viewport.height?Math.min(100,Math.round(((scrollY+viewport.height)/pageHeight)*100)):100;interactions.push({type:"scroll",t:now-startTime,y:scrollY,depth_pct:depthPct});},{passive:true});
-document.addEventListener("mousemove",function(e){if(isCapped()||cursorPath.length>=MAX_CURSOR_POINTS)return;var now=Date.now();if(now-lastCursorSample<250)return;lastCursorSample=now;cursorPath.push([Math.round(e.clientX),Math.round(e.clientY),now-startTime]);},{passive:true});
-document.addEventListener("keydown",function(e){if(isCapped()||interactions.length>=MAX_INTERACTIONS)return;if(e.target&&(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA"))return;interactions.push({type:"keydown",t:Date.now()-startTime,key:e.key});},true);
-function buildAnalytics(){if(!meta)return null;var ph=document.documentElement.scrollHeight;var maxScroll=0,clickElements={},firstClick=null,firstScroll=null,totalDistance=0;for(var i=0;i<interactions.length;i++){var ev=interactions[i];if(ev.type==="scroll"){if(ev.depth_pct>maxScroll)maxScroll=ev.depth_pct;if(!firstScroll)firstScroll=ev.t;}if(ev.type==="click"){if(!firstClick)firstClick=ev.t;var key=ev.element.tag+":"+ev.element.text.substring(0,30);clickElements[key]=true;}}for(var j=1;j<cursorPath.length;j++){var dx=cursorPath[j][0]-cursorPath[j-1][0];var dy=cursorPath[j][1]-cursorPath[j-1][1];totalDistance+=Math.sqrt(dx*dx+dy*dy);}var duration=Date.now()-startTime;var clickHeatmap=[];for(var k=0;k<interactions.length;k++){if(interactions[k].type==="click")clickHeatmap.push([interactions[k].x,interactions[k].y]);}return{generation_id:meta.generationId,tournament_id:meta.tournamentId,started_at:new Date(startTime).toISOString(),ended_at:new Date().toISOString(),duration_ms:duration,viewport:viewport,page_height:ph,interactions:interactions,cursor_path:cursorPath,click_heatmap:clickHeatmap,summary:{total_clicks:clickHeatmap.length,total_scrolls:interactions.filter(function(e){return e.type==="scroll";}).length,max_scroll_depth_pct:maxScroll,unique_elements_clicked:Object.keys(clickElements).length,time_to_first_click_ms:firstClick,time_to_first_scroll_ms:firstScroll,cursor_distance_px:Math.round(totalDistance),active_time_ms:duration}};}
-function loadRrweb(){if(rrwebStarted)return;rrwebStarted=true;var s=document.createElement("script");s.src=RRWEB_CDN;s.onload=function(){var rec=(window.rrweb&&window.rrweb.record)||window.rrwebRecord;if(!rec)return;rec({emit:function(event){if(rrwebEvents.length>=MAX_RRWEB_EVENTS||isCapped())return;rrwebEvents.push(event);}});};s.onerror=function(){};document.head.appendChild(s);}
-window.addEventListener("message",function(e){if(!e.data||typeof e.data.type!=="string")return;if(e.data.type==="arena:init"){if(!meta)startTime=Date.now();meta={generationId:e.data.generationId||e.data.modelId,tournamentId:e.data.tournamentId};persist();loadRrweb();if(e.source)e.source.postMessage({type:"arena:init-ack",generationId:meta.generationId},"*");}if(e.data.type==="arena:flush"){var resp={type:"arena:recording-data",generationId:meta?meta.generationId:null,rrwebEvents:rrwebEvents,analytics:buildAnalytics()};try{sessionStorage.removeItem(SK);}catch(ex){}if(e.source)e.source.postMessage(resp,"*");}});
-loadRrweb();
-})();</script>
-  <script data-arena-views="true">(function(){var isTop=false;try{isTop=window.self===window.top;}catch(e){}if(!isTop)return;window.__ARENA_META={generationId:"muse-spark-1.2",tournamentId:"ea5f4d62-d380-42ec-a620-64d3b33f1652"};var payload={tournamentId:"ea5f4d62-d380-42ec-a620-64d3b33f1652",modelId:"muse-spark-1.2"};try{var r=document.referrer;if(r){var u=new URL(r);payload.referrerDomain=u.hostname;}}catch(e){}try{var vid=null;try{vid=localStorage.getItem('arena_vid');}catch(e){}if(!vid){vid=typeof crypto!=="undefined"&&crypto.randomUUID?crypto.randomUUID():(Date.now().toString(36)+Math.random().toString(36).slice(2)).slice(0,32);try{localStorage.setItem('arena_vid',vid);}catch(e){}}if(vid)payload.viewerId=vid;}catch(e){}try{fetch("https://www.designarena.ai/api/agon/page-views",{"method":"POST","headers":{"Content-Type":"application/json"},"body":JSON.stringify(payload),"keepalive":true});}catch(e){}})();</script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>23Konekt | Smart Security & IT Solutions</title>
+  <!-- Tailwind via CDN + custom config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Poppins & Inter fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Additional libraries: lightweight animation helpers -->
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <!-- Custom styles & animations -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #FFFFFF;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3, h4, .poppins {
+      font-family: 'Poppins', 'Inter', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #0057B8 0%, #2E7D32 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      box-shadow: 0 20px 35px rgba(0, 87, 184, 0.08), 0 8px 18px rgba(0, 0, 0, 0.02);
+      border-radius: 24px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .glass-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 45px rgba(0, 87, 184, 0.12), 0 12px 24px rgba(0, 0, 0, 0.05);
+    }
+    .btn-primary {
+      background: linear-gradient(105deg, #0057B8 0%, #004494 100%);
+      color: white;
+      font-weight: 600;
+      padding: 0.85rem 2rem;
+      border-radius: 40px;
+      box-shadow: 0 10px 18px -8px rgba(0, 87, 184, 0.4);
+      transition: all 0.25s ease;
+      letter-spacing: 0.3px;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(105deg, #F57C00 0%, #e66f00 100%);
+      box-shadow: 0 14px 22px -6px rgba(245, 124, 0, 0.45);
+      transform: scale(1.03);
+    }
+    .nav-blur {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(0, 87, 184, 0.08);
+    }
+    .counter-animation {
+      transition: all 0.6s cubic-bezier(0.2, 0.9, 0.3, 1);
+    }
+    .floating-icon {
+      animation: floatIcon 5s ease-in-out infinite;
+    }
+    @keyframes floatIcon {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
+    .project-carousel {
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+    .project-card {
+      scroll-snap-align: start;
+    }
+    /* smooth reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 768px) {
+      .glass-card {
+        border-radius: 20px;
+      }
+    }
+  </style>
 </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-      <script data-element-picker>/**
- * Agon Element Picker — injected into the preview iframe.
- *
- * Two modes, both driven by postMessage from the parent:
- *
- * Inspect mode (click-to-select for AI chat prefill):
- *   Parent -> iframe:  { type: 'inspect:mode', enabled: true/false }
- *   iframe -> Parent:  { type: 'element:selected', file, line, column, tag, text, classes, id }
- *
- * Edit mode (WYSIWYG text editing):
- *   Parent -> iframe:  { type: 'arena:edit-mode', enabled: true/false }
- *   Parent -> iframe:  { type: 'arena:set-text', domPath, text }   // undo/redo
- *   iframe -> Parent:  { type: 'arena:text-edit', source: {file,line,col}|null,
- *                        tag, oldText, newText, domPath, ts }
- *
- * Capability handshake (parent shows edit UI only when the build is tagged):
- *   Parent -> iframe:  { type: 'arena:init', ... }   (already sent for recording)
- *   iframe -> Parent:  { type: 'arena:edit-capability', textEdit: true, tagged: bool }
- *
- * Source locations come from data-source-loc="file:line:col" attributes added
- * by the vite source-tags plugin (data-agon-source is read as a legacy fallback).
- */
-(function () {
-  'use strict';
+<body class="antialiased text-[#1E293B] bg-white">
 
-  // Capability markers — bumped whenever the picker gains behavior that older
-  // baked-in copies lack, so visual_picker_inject._refresh_stale_picker knows
-  // to re-inline this version.
-  //   arena:link-edit     — editing link / <a> text
-  //   arena:textnode-edit — editing a single text node inside a mixed-content
-  //                         element (e.g. <h1>Text<span>..</span></h1>)
-  //   arena:header-edit   — edit `user-select:none` headers/nav; box-only
-  //                         highlight (no source/tag label)
-  //   arena:multirun-edit — patch the exact text run of a multi-run element
-  //                         (e.g. lines split by <br/>), via runIndex
-  // marker: arena:link-edit arena:textnode-edit arena:header-edit arena:multirun-edit
+  <!-- Sticky Navigation -->
+  <header class="fixed top-0 left-0 w-full z-50 nav-blur py-3 px-4 md:px-8 transition-all duration-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-10 h-10 bg-[#0057B8] rounded-xl flex items-center justify-center shadow-md">
+          <span class="text-white font-bold text-xl poppins">23</span>
+        </div>
+        <span class="text-xl md:text-2xl font-bold text-[#0A1F44] poppins tracking-tight">23Konekt<span class="text-[#F57C00]">.</span></span>
+      </div>
+      <nav class="hidden lg:flex items-center space-x-8 text-[15px] font-medium text-[#1E293B]">
+        <a href="#home" class="hover:text-[#0057B8] transition-colors">Home</a>
+        <a href="#about" class="hover:text-[#0057B8] transition-colors">About Us</a>
+        <a href="#services" class="hover:text-[#0057B8] transition-colors">Services & Products</a>
+        <a href="#projects" class="hover:text-[#0057B8] transition-colors">Projects</a>
+        <a href="#contact" class="hover:text-[#0057B8] transition-colors">Contact</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <button class="hidden md:inline-flex btn-primary text-sm !py-2.5 !px-5" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          Get a Quote
+        </button>
+        <button id="mobileMenuBtn" class="lg:hidden text-[#0A1F44] p-2">
+          <i data-feather="menu" class="w-7 h-7"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="lg:hidden hidden flex-col mt-4 space-y-3 bg-white/90 backdrop-blur-xl rounded-2xl p-5 shadow-xl border border-gray-100">
+      <a href="#home" class="block py-2 font-medium">Home</a>
+      <a href="#about" class="block py-2 font-medium">About Us</a>
+      <a href="#services" class="block py-2 font-medium">Services</a>
+      <a href="#projects" class="block py-2 font-medium">Projects</a>
+      <a href="#contact" class="block py-2 font-medium">Contact</a>
+    </div>
+  </header>
 
-  var SOURCE_ATTR = 'data-source-loc';
-  var LEGACY_SOURCE_ATTR = 'data-agon-source';
+  <main class="relative">
+    <!-- HOME / HERO SECTION -->
+    <section id="home" class="min-h-screen flex items-center relative bg-gradient-to-b from-white via-[#F5F7FA] to-white overflow-hidden pt-20">
+      <div class="absolute top-20 right-0 w-[500px] h-[500px] bg-[#0057B8] opacity-[0.04] rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 left-10 w-72 h-72 bg-[#F57C00] opacity-[0.07] rounded-full blur-2xl"></div>
+      
+      <div class="max-w-7xl mx-auto px-6 md:px-10 w-full relative z-10 grid lg:grid-cols-2 gap-10 items-center">
+        <div class="reveal pt-10 lg:pt-0">
+          <div class="inline-flex items-center gap-2 bg-white/70 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm border border-gray-100 mb-6">
+            <span class="w-2 h-2 bg-[#2E7D32] rounded-full animate-pulse"></span>
+            <span class="text-sm font-semibold text-[#2E7D32]">Trusted across Uganda</span>
+          </div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-[#0A1F44] poppins">
+            Smart Security & <br/><span class="gradient-text">IT Solutions</span> for Homes, Businesses & Agro-Farms
+          </h1>
+          <p class="text-lg text-[#1E293B]/80 mt-6 max-w-xl">
+            CCTV Surveillance • IT Networking • Cybersecurity • Access Control • Electrical & Solar Systems. Integrated protection by 23Konekt.
+          </p>
+          <div class="flex flex-wrap gap-4 mt-8">
+            <button class="btn-primary text-base" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Explore Solutions</button>
+            <button class="border-2 border-[#0057B8] text-[#0057B8] font-semibold px-7 py-3 rounded-full hover:bg-[#0057B8]/5 transition flex items-center gap-2">
+              <i data-feather="play-circle" class="w-5 h-5"></i> Watch Demo
+            </button>
+          </div>
+          <!-- Floating statistics -->
+          <div class="flex flex-wrap gap-6 mt-10">
+            <div class="bg-white/80 backdrop-blur-sm p-4 rounded-2xl shadow-md border-l-4 border-[#F57C00]">
+              <p class="text-3xl font-bold text-[#0057B8] poppins"><span id="counter1">0</span>+</p>
+              <p class="text-sm text-[#1E293B]">Projects Delivered</p>
+            </div>
+            <div class="bg-white/80 backdrop-blur-sm p-4 rounded-2xl shadow-md border-l-4 border-[#2E7D32]">
+              <p class="text-3xl font-bold text-[#0057B8] poppins"><span id="counter2">0</span>+</p>
+              <p class="text-sm text-[#1E293B]">Enterprise Clients</p>
+            </div>
+          </div>
+        </div>
+        <div class="relative flex justify-center lg:justify-end reveal">
+          <div class="relative w-full max-w-md lg:max-w-lg">
+            <div class="glass-card p-1 rounded-3xl shadow-2xl">
+              <img src="https://placehold.co/600x500/0057B8/white?text=Smart+Security+Hub" alt="Security technology" class="w-full h-auto rounded-2xl object-cover" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230057B8%22/%3E%3Ctext x=%22300%22 y=%22200%22 fill=%22white%22 font-size=%2232%22 text-anchor=%22middle%22 dy=%22.3em%22%3ESecurity+Visual%3C/text%3E%3C/svg%3E';">
+            </div>
+            <!-- Floating tech icons -->
+            <div class="absolute -top-6 -left-4 w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center floating-icon">
+              <i data-feather="camera" class="w-8 h-8 text-[#0057B8]"></i>
+            </div>
+            <div class="absolute -bottom-4 -right-6 w-14 h-14 bg-[#F57C00]/10 backdrop-blur-md rounded-xl flex items-center justify-center floating-icon delay-1000">
+              <i data-feather="wifi" class="w-7 h-7 text-[#F57C00]"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  var inspectEnabled = false;
-  var editEnabled = false;
-  var overlay = null;
-  var label = null;
-  var currentTarget = null;
-  var activeEdit = null; // { element, oldText }
+    <!-- SERVICES OVERVIEW (glass cards) -->
+    <section id="services" class="py-20 bg-[#F5F7FA] relative">
+      <div class="max-w-7xl mx-auto px-6 md:px-10">
+        <div class="text-center mb-14 reveal">
+          <span class="text-[#F57C00] font-semibold tracking-widest uppercase text-sm">Capabilities</span>
+          <h2 class="text-4xl md:text-5xl font-bold text-[#0A1F44] mt-3 poppins">Integrated Security & IT Services</h2>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="glass-card p-7 reveal flex flex-col items-start">
+            <div class="w-14 h-14 bg-[#0057B8]/10 rounded-2xl flex items-center justify-center mb-5"><i data-feather="video" class="w-7 h-7 text-[#0057B8]"></i></div>
+            <h3 class="text-2xl font-bold poppins text-[#0A1F44]">CCTV Surveillance</h3>
+            <p class="text-[#1E293B]/70 mt-3">Hikvision, Dahua & IMOU systems with AI analytics and remote monitoring.</p>
+          </div>
+          <div class="glass-card p-7 reveal flex flex-col items-start">
+            <div class="w-14 h-14 bg-[#2E7D32]/10 rounded-2xl flex items-center justify-center mb-5"><i data-feather="shield" class="w-7 h-7 text-[#2E7D32]"></i></div>
+            <h3 class="text-2xl font-bold poppins text-[#0A1F44]">Cybersecurity</h3>
+            <p class="text-[#1E293B]/70 mt-3">Endpoint protection, firewall configuration, and enterprise-grade threat detection.</p>
+          </div>
+          <div class="glass-card p-7 reveal flex flex-col items-start">
+            <div class="w-14 h-14 bg-[#F57C00]/10 rounded-2xl flex items-center justify-center mb-5"><i data-feather="sun" class="w-7 h-7 text-[#F57C00]"></i></div>
+            <h3 class="text-2xl font-bold poppins text-[#0A1F44]">Solar & Electrical</h3>
+            <p class="text-[#1E293B]/70 mt-3">Backup power, solar installations, and electrical wiring for resilient operations.</p>
+          </div>
+          <div class="glass-card p-7 reveal flex flex-col items-start">
+            <div class="w-14 h-14 bg-[#0057B8]/10 rounded-2xl flex items-center justify-center mb-5"><i data-feather="lock" class="w-7 h-7 text-[#0057B8]"></i></div>
+            <h3 class="text-2xl font-bold poppins text-[#0A1F44]">Access Control</h3>
+            <p class="text-[#1E293B]/70 mt-3">Biometric & RFID systems for commercial and government buildings.</p>
+          </div>
+          <div class="glass-card p-7 reveal flex flex-col items-start">
+            <div class="w-14 h-14 bg-[#2E7D32]/10 rounded-2xl flex items-center justify-center mb-5"><i data-feather="server" class="w-7 h-7 text-[#2E7D32]"></i></div>
+            <h3 class="text-2xl font-bold poppins text-[#0A1F44]">IT Networking</h3>
+            <p class="text-[#1E293B]/70 mt-3">Ubiquiti & Cisco structured cabling, Wi-Fi coverage, and network design.</p>
+          </div>
+          <div class="glass-card p-7 reveal flex flex-col items-start">
+            <div class="w-14 h-14 bg-[#F57C00]/10 rounded-2xl flex items-center justify-center mb-5"><i data-feather="smartphone" class="w-7 h-7 text-[#F57C00]"></i></div>
+            <h3 class="text-2xl font-bold poppins text-[#0A1F44]">Smart Security</h3>
+            <p class="text-[#1E293B]/70 mt-3">Integrated alarms, automation & IoT for modern homes and agro-farms.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  function getSourceAttr(el) {
-    return el.getAttribute(SOURCE_ATTR) || el.getAttribute(LEGACY_SOURCE_ATTR);
-  }
+    <!-- FEATURED PRODUCTS CAROUSEL -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6 md:px-10 reveal">
+        <div class="flex items-end justify-between mb-10">
+          <div>
+            <span class="text-[#F57C00] font-semibold text-sm uppercase">Technology Partners</span>
+            <h2 class="text-4xl font-bold text-[#0A1F44] mt-2 poppins">Featured Products</h2>
+          </div>
+        </div>
+        <div class="project-carousel flex gap-6 overflow-x-auto pb-4 -mx-2 px-2 snap-x">
+          <div class="min-w-[260px] md:min-w-[300px] bg-white rounded-2xl shadow-xl border border-gray-100 p-5 project-card">
+            <div class="h-40 bg-[#F5F7FA] rounded-xl flex items-center justify-center mb-4"><i data-feather="camera" class="w-12 h-12 text-[#0057B8]/40"></i></div>
+            <h4 class="font-bold poppins text-lg">Hikvision ColorVu</h4>
+            <p class="text-sm text-[#1E293B]/70">Full-color night vision cameras.</p>
+          </div>
+          <div class="min-w-[260px] md:min-w-[300px] bg-white rounded-2xl shadow-xl border border-gray-100 p-5 project-card">
+            <div class="h-40 bg-[#F5F7FA] rounded-xl flex items-center justify-center mb-4"><i data-feather="wifi" class="w-12 h-12 text-[#F57C00]/40"></i></div>
+            <h4 class="font-bold poppins text-lg">Ubiquiti UniFi</h4>
+            <p class="text-sm text-[#1E293B]/70">Enterprise Wi-Fi & networking.</p>
+          </div>
+          <div class="min-w-[260px] md:min-w-[300px] bg-white rounded-2xl shadow-xl border border-gray-100 p-5 project-card">
+            <div class="h-40 bg-[#F5F7FA] rounded-xl flex items-center justify-center mb-4"><i data-feather="sun" class="w-12 h-12 text-[#2E7D32]/40"></i></div>
+            <h4 class="font-bold poppins text-lg">SolarEdge Inverters</h4>
+            <p class="text-sm text-[#1E293B]/70">Smart energy management.</p>
+          </div>
+          <div class="min-w-[260px] md:min-w-[300px] bg-white rounded-2xl shadow-xl border border-gray-100 p-5 project-card">
+            <div class="h-40 bg-[#F5F7FA] rounded-xl flex items-center justify-center mb-4"><i data-feather="lock" class="w-12 h-12 text-[#0057B8]/40"></i></div>
+            <h4 class="font-bold poppins text-lg">ZKTeco Access</h4>
+            <p class="text-sm text-[#1E293B]/70">Biometric terminals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  function createOverlay() {
-    if (overlay) return;
+    <!-- WHY 23KONEKT + STATS -->
+    <section id="about" class="py-20 bg-[#0A1F44] text-white relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#0057B8]/20 to-transparent"></div>
+      <div class="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="reveal">
+            <h2 class="text-4xl font-bold poppins">Why choose 23Konekt?</h2>
+            <p class="text-white/70 mt-4 max-w-md">Kampala's trusted integrator combining IT excellence with advanced physical security. Certified engineers, rapid support, and tailored designs.</p>
+            <div class="grid grid-cols-2 gap-4 mt-8">
+              <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl"><span class="text-3xl font-bold text-[#F57C00]">7+</span><p class="text-sm">Years Experience</p></div>
+              <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl"><span class="text-3xl font-bold text-[#2E7D32]">24/7</span><p class="text-sm">Support</p></div>
+            </div>
+          </div>
+          <div class="reveal glass-card !bg-white/10 !border-white/20 text-white p-7">
+            <h3 class="text-2xl font-bold poppins">Our mission</h3>
+            <p class="mt-3 text-white/80">Deliver intelligent, reliable security and IT infrastructure that protects what matters most—homes, enterprises, and agricultural operations across East Africa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    overlay = document.createElement('div');
-    overlay.id = '__picker-overlay';
-    overlay.style.cssText = [
-      'position: fixed',
-      'pointer-events: none',
-      'z-index: 2147483647',
-      'border: 2px solid #3b82f6',
-      'background: rgba(59, 130, 246, 0.08)',
-      'transition: all 0.05s ease-out',
-      'display: none',
-      'box-sizing: border-box',
-    ].join(';');
+    <!-- RECENT PROJECTS / TESTIMONIALS -->
+    <section id="projects" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6 md:px-10">
+        <div class="mb-12 reveal"><span class="text-[#F57C00] font-semibold text-sm">Portfolio</span><h2 class="text-4xl font-bold text-[#0A1F44] mt-2 poppins">Recent Projects</h2></div>
+        <div class="grid md:grid-cols-3 gap-7 reveal">
+          <div class="bg-[#F5F7FA] p-5 rounded-2xl border-l-4 border-[#0057B8]"><p class="font-bold poppins">Government Office Complex</p><p class="text-sm mt-2">CCTV + Access Control for 120 doors.</p></div>
+          <div class="bg-[#F5F7FA] p-5 rounded-2xl border-l-4 border-[#F57C00]"><p class="font-bold poppins">Agro-Processing Plant</p><p class="text-sm mt-2">Solar backup & perimeter surveillance.</p></div>
+          <div class="bg-[#F5F7FA] p-5 rounded-2xl border-l-4 border-[#2E7D32]"><p class="font-bold poppins">Residential Smart Estate</p><p class="text-sm mt-2">IoT security & networking for 45 villas.</p></div>
+        </div>
+        <div class="mt-14 reveal bg-gradient-to-r from-[#0057B8]/5 to-[#F57C00]/5 p-7 rounded-3xl">
+          <p class="italic text-lg text-[#0A1F44]">“23Konekt transformed our security infrastructure. Professional, innovative, and always responsive.”</p>
+          <p class="font-semibold mt-3 text-[#0057B8]">— Operations Director, Kampala</p>
+        </div>
+      </div>
+    </section>
 
-    label = document.createElement('div');
-    label.id = '__picker-label';
-    label.style.cssText = [
-      'position: fixed',
-      'pointer-events: none',
-      'z-index: 2147483647',
-      'background: #1e40af',
-      'color: #fff',
-      'font: 11px/1.4 monospace',
-      'padding: 2px 6px',
-      'border-radius: 3px',
-      'white-space: nowrap',
-      'display: none',
-      'max-width: 400px',
-      'overflow: hidden',
-      'text-overflow: ellipsis',
-    ].join(';');
+    <!-- TECHNOLOGY PARTNERS -->
+    <section class="py-16 bg-[#F5F7FA]">
+      <div class="max-w-7xl mx-auto px-6 md:px-10 text-center reveal">
+        <h3 class="text-2xl font-bold poppins text-[#0A1F44]">Technology Partners</h3>
+        <div class="flex flex-wrap justify-center gap-8 mt-8 opacity-80">
+          <span class="text-xl font-bold text-[#1E293B]">HIKVISION</span>
+          <span class="text-xl font-bold text-[#1E293B]">DAHUA</span>
+          <span class="text-xl font-bold text-[#1E293B]">UBIQUITI</span>
+          <span class="text-xl font-bold text-[#1E293B]">IMOU</span>
+          <span class="text-xl font-bold text-[#1E293B]">CISCO</span>
+        </div>
+      </div>
+    </section>
 
-    document.body.appendChild(overlay);
-    document.body.appendChild(label);
-  }
+    <!-- CONTACT & EMERGENCY BANNER -->
+    <section id="contact" class="py-20 bg-white relative">
+      <div class="max-w-7xl mx-auto px-6 md:px-10">
+        <div class="bg-[#F57C00]/10 border border-[#F57C00]/30 rounded-2xl p-5 mb-10 flex flex-wrap items-center justify-between reveal">
+          <div class="flex items-center gap-3"><i data-feather="alert-triangle" class="text-[#F57C00] w-6 h-6"></i><span class="font-bold text-[#0A1F44]">24/7 Emergency Support: +256 700 123456</span></div>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-12 reveal">
+          <div>
+            <h2 class="text-4xl font-bold poppins text-[#0A1F44]">Get in touch</h2>
+            <p class="mt-4 text-[#1E293B]/70">Kampala, Uganda · info@23konekt.com</p>
+            <div class="mt-8 space-y-4">
+              <div class="flex items-center gap-3"><i data-feather="map-pin" class="text-[#0057B8]"></i><span>Plot 23, Kampala Road</span></div>
+              <div class="flex items-center gap-3"><i data-feather="mail" class="text-[#0057B8]"></i><span>sales@23konekt.co.ug</span></div>
+            </div>
+          </div>
+          <div class="bg-[#F5F7FA] p-7 rounded-3xl shadow-sm">
+            <form class="space-y-4">
+              <input type="text" placeholder="Full name" class="w-full p-3 rounded-xl border border-gray-200 bg-white">
+              <input type="email" placeholder="Email" class="w-full p-3 rounded-xl border border-gray-200 bg-white">
+              <textarea rows="3" placeholder="Your message" class="w-full p-3 rounded-xl border border-gray-200 bg-white"></textarea>
+              <button type="button" class="btn-primary w-full">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  function removeOverlay() {
-    if (overlay) { overlay.remove(); overlay = null; }
-    if (label) { label.remove(); label = null; }
-  }
+    <footer class="bg-[#0A1F44] text-white py-10 px-6 text-center text-sm">
+      <p>© 2025 23Konekt IT & Security Systems. All rights reserved.</p>
+    </footer>
+  </main>
 
-  function isPickerNode(el) {
-    return el === overlay || el === label ||
-      el.id === '__picker-overlay' || el.id === '__picker-label';
-  }
-
-  function findSourceAttr(el) {
-    while (el && el !== document.body && el !== document.documentElement) {
-      var src = getSourceAttr(el);
-      if (src) return { element: el, source: src };
-      el = el.parentElement;
+  <script>
+    feather.replace();
+    
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
     }
-    return null;
-  }
 
-  function parseSource(sourceStr) {
-    // Format: "relative/path.tsx:line:col"
-    var parts = sourceStr.split(':');
-    if (parts.length < 3) return { file: sourceStr, line: 0, column: 0 };
-    var col = parseInt(parts.pop(), 10);
-    var line = parseInt(parts.pop(), 10);
-    var file = parts.join(':'); // rejoin in case path has colons (unlikely but safe)
-    return { file: file, line: line, column: col };
-  }
-
-  // Stable-enough CSS path so the parent can address this element for undo.
-  function domPath(el) {
-    var segs = [];
-    while (el && el !== document.body && el.parentElement) {
-      var i = 1;
-      var sib = el;
-      while ((sib = sib.previousElementSibling)) i++;
-      segs.unshift(el.tagName.toLowerCase() + ':nth-child(' + i + ')');
-      el = el.parentElement;
-    }
-    return 'body > ' + segs.join(' > ');
-  }
-
-  // An element is whole-text-editable when it owns at least one non-whitespace
-  // text node and no element children — editing such an element via
-  // contenteditable is safe. Mixed-content elements are handled per-text-node
-  // (see resolveEditable / beginEditTextNode) instead.
-  function isTextEditable(el) {
-    if (!el || el.children.length > 0) return false;
-    for (var i = 0; i < el.childNodes.length; i++) {
-      var n = el.childNodes[i];
-      if (n.nodeType === Node.TEXT_NODE && n.textContent.trim()) return true;
-    }
-    return false;
-  }
-
-  // The text node directly under a viewport point, if it holds real text.
-  function textNodeAtPoint(x, y) {
-    var node = null;
-    if (document.caretPositionFromPoint) {
-      var cp = document.caretPositionFromPoint(x, y);
-      node = cp && cp.offsetNode;
-    } else if (document.caretRangeFromPoint) {
-      var r = document.caretRangeFromPoint(x, y);
-      node = r && r.startContainer;
-    }
-    if (node && node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
-      return node;
-    }
-    return null;
-  }
-
-  // First direct non-whitespace text child of an element, if any.
-  function firstDirectTextNode(el) {
-    if (!el) return null;
-    for (var i = 0; i < el.childNodes.length; i++) {
-      var n = el.childNodes[i];
-      if (n.nodeType === Node.TEXT_NODE && n.textContent.trim()) return n;
-    }
-    return null;
-  }
-
-  // Resolve what a hover/click at (x, y) should edit:
-  //   { kind: 'text', textNode, element }  — one text run inside a mixed element
-  //   { kind: 'element', element }         — a whole pure-text element
-  //   null                                 — nothing editable here
-  function resolveEditable(target, x, y) {
-    var tn = textNodeAtPoint(x, y);
-    if (tn) {
-      var p = tn.parentElement;
-      // Only split out an individual text node when the element also has
-      // element children (mixed content); pure-text elements use the cleaner
-      // whole-element path below.
-      if (p && !isPickerNode(p) && p.children.length > 0) {
-        return { kind: 'text', textNode: tn, element: p };
-      }
-    }
-    if (isTextEditable(target)) return { kind: 'element', element: target };
-    // Fallback for mixed-content elements whose caret can't be hit-tested
-    // (e.g. `user-select: none` headers/nav): edit the first direct text run.
-    if (target && !isPickerNode(target) && target.children.length > 0) {
-      var direct = firstDirectTextNode(target);
-      if (direct) return { kind: 'text', textNode: direct, element: target };
-    }
-    return null;
-  }
-
-  // Viewport rect of a text node's contents (falls back to its parent).
-  function rectOfTextNode(tn) {
-    try {
-      var r = document.createRange();
-      r.selectNodeContents(tn);
-      var rect = r.getBoundingClientRect();
-      if (rect && (rect.width || rect.height)) return rect;
-    } catch (e) { /* fall through */ }
-    return tn.parentElement ? tn.parentElement.getBoundingClientRect() : null;
-  }
-
-  function applyHighlight(rect, editable, labelEl, showLabel) {
-    if (!overlay || !rect) return;
-    overlay.style.top = rect.top + 'px';
-    overlay.style.left = rect.left + 'px';
-    overlay.style.width = rect.width + 'px';
-    overlay.style.height = rect.height + 'px';
-    overlay.style.borderColor = editable ? '#10b981' : '#3b82f6';
-    overlay.style.background = editable
-      ? 'rgba(16, 185, 129, 0.08)' : 'rgba(59, 130, 246, 0.08)';
-    overlay.style.display = 'block';
-
-    // Edit mode shows just the highlight box — no source/tag label.
-    if (!showLabel || !label) {
-      if (label) label.style.display = 'none';
-      return;
-    }
-
-    var tag = labelEl ? labelEl.tagName.toLowerCase() : 'text';
-    var src = labelEl ? getSourceAttr(labelEl) : null;
-    var labelText = '<' + tag + '>';
-    if (src) {
-      var parsed = parseSource(src);
-      labelText += '  ' + parsed.file + ':' + parsed.line;
-    }
-    if (editable) labelText += '  ✎';
-    label.textContent = labelText;
-    label.style.background = editable ? '#065f46' : '#1e40af';
-
-    // Position label above the highlight, or below if too close to top
-    var labelTop = rect.top - 22;
-    if (labelTop < 4) labelTop = rect.bottom + 4;
-    label.style.top = labelTop + 'px';
-    label.style.left = Math.max(4, rect.left) + 'px';
-    label.style.display = 'block';
-  }
-
-  function highlightElement(el, editable, showLabel) {
-    if (!el) return;
-    applyHighlight(el.getBoundingClientRect(), editable, el, showLabel);
-  }
-
-  function hideOverlay() {
-    if (overlay) overlay.style.display = 'none';
-    if (label) label.style.display = 'none';
-    currentTarget = null;
-  }
-
-  function postToParent(msg) {
-    if (window.parent && window.parent !== window) {
-      window.parent.postMessage(msg, '*');
-    }
-  }
-
-  // ---------------------------------------------------------------- inspect
-
-  function onMouseOver(e) {
-    if (!inspectEnabled && !editEnabled) return;
-    var target = e.target;
-    if (isPickerNode(target)) return;
-    if (activeEdit && target === activeEdit.element) { hideOverlay(); return; }
-
-    if (editEnabled) {
-      // Edit mode: highlight box only, no source/tag label (showLabel=false).
-      var res = resolveEditable(target, e.clientX, e.clientY);
-      if (res) {
-        currentTarget = res.element;
-        if (res.kind === 'text') {
-          applyHighlight(rectOfTextNode(res.textNode), true, res.element, false);
-        } else {
-          highlightElement(res.element, true, false);
+    // Scroll reveal animation
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
         }
-      } else {
-        currentTarget = target;
-        highlightElement(target, false, false);
-      }
-      return;
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Animated counters
+    function animateCounter(id, max, speed = 40) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      let current = 0;
+      const increment = Math.ceil(max / 60);
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= max) {
+          el.innerText = max;
+          clearInterval(timer);
+        } else {
+          el.innerText = current;
+        }
+      }, speed);
     }
-
-    var found = findSourceAttr(target);
-    if (found) {
-      currentTarget = found.element;
-      highlightElement(found.element, false, true);
-    } else {
-      currentTarget = target;
-      highlightElement(target, false, true);
-    }
-  }
-
-  function onMouseOut(e) {
-    if (!inspectEnabled && !editEnabled) return;
-    var related = e.relatedTarget;
-    if (related === overlay || related === label) return;
-    if (!e.relatedTarget || e.relatedTarget === document) {
-      hideOverlay();
-    }
-  }
-
-  function onInspectClick(e) {
-    if (!inspectEnabled) return;
-
-    e.preventDefault();
-    e.stopPropagation();
-    e.stopImmediatePropagation();
-
-    var target = e.target;
-    if (isPickerNode(target)) return;
-
-    var found = findSourceAttr(target);
-    var element = found ? found.element : target;
-    var sourceStr = found ? found.source : null;
-
-    var info = {
-      type: 'element:selected',
-      tag: element.tagName.toLowerCase(),
-      text: (element.textContent || '').trim().substring(0, 200),
-      classes: element.className && typeof element.className === 'string'
-        ? element.className.substring(0, 300) : '',
-      id: element.id || '',
-      file: null,
-      line: null,
-      column: null,
-    };
-
-    if (sourceStr) {
-      var parsed = parseSource(sourceStr);
-      info.file = parsed.file;
-      info.line = parsed.line;
-      info.column = parsed.column;
-    }
-
-    postToParent(info);
-    console.log('[element-picker] Selected:', info);
-  }
-
-  function enableInspect() {
-    if (inspectEnabled) return;
-    if (editEnabled) disableEdit();
-    inspectEnabled = true;
-    createOverlay();
-    document.addEventListener('mouseover', onMouseOver, true);
-    document.addEventListener('mouseout', onMouseOut, true);
-    document.addEventListener('click', onInspectClick, true);
-    document.body.style.cursor = 'crosshair';
-    console.log('[element-picker] Inspect mode ON');
-  }
-
-  function disableInspect() {
-    if (!inspectEnabled) return;
-    inspectEnabled = false;
-    document.removeEventListener('mouseover', onMouseOver, true);
-    document.removeEventListener('mouseout', onMouseOut, true);
-    document.removeEventListener('click', onInspectClick, true);
-    hideOverlay();
-    removeOverlay();
-    document.body.style.cursor = '';
-    console.log('[element-picker] Inspect mode OFF');
-  }
-
-  // ------------------------------------------------------------------- edit
-
-  function commitEdit() {
-    if (!activeEdit) return;
-    // For text-node edits the contenteditable target is a temporary wrapper
-    // span, but the source location + tag belong to the element that owns the
-    // text (sourceEl). childIndex addresses the specific text run for undo.
-    var editEl = activeEdit.element;
-    var srcEl = activeEdit.kind === 'text' ? activeEdit.sourceEl : editEl;
-    var childIndex = activeEdit.kind === 'text' ? activeEdit.childIndex : null;
-    var runIndex = activeEdit.kind === 'text' ? activeEdit.textRunIndex : null;
-    var oldText = activeEdit.oldText;
-    var newText = editEl.textContent;
-    endEdit();
-
-    if (newText === oldText) return;
-
-    var sourceStr = getSourceAttr(srcEl);
-    postToParent({
-      type: 'arena:text-edit',
-      source: sourceStr ? parseSource(sourceStr) : null,
-      tag: srcEl.tagName.toLowerCase(),
-      oldText: oldText,
-      newText: newText,
-      domPath: domPath(srcEl),
-      childIndex: childIndex,
-      runIndex: runIndex,
-      ts: Date.now(),
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter('counter1', 240);
+          animateCounter('counter2', 180);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    const counter1El = document.getElementById('counter1');
+    if (counter1El) counterObserver.observe(counter1El);
+    
+    // Smooth scroll for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+        if (mobileMenu) mobileMenu.classList.add('hidden');
+      });
     });
-  }
-
-  function cancelEdit() {
-    if (!activeEdit) return;
-    activeEdit.element.textContent = activeEdit.oldText;
-    endEdit();
-  }
-
-  function endEdit() {
-    if (!activeEdit) return;
-    var el = activeEdit.element;
-    el.removeAttribute('contenteditable');
-    el.style.outline = activeEdit.prevOutline;
-    el.style.removeProperty('user-select');
-    el.style.removeProperty('-webkit-user-select');
-    el.removeEventListener('blur', onEditBlur);
-    el.removeEventListener('keydown', onEditKeydown);
-    // Text-node edits: unwrap the temporary span back into a plain text node so
-    // the DOM structure matches the (now-edited) source.
-    if (activeEdit.kind === 'text' && el.parentNode) {
-      el.parentNode.replaceChild(document.createTextNode(el.textContent), el);
-    }
-    // Restore the href we stashed while editing a link (see beginEdit).
-    if (activeEdit.anchor && activeEdit.prevHref != null) {
-      activeEdit.anchor.setAttribute('href', activeEdit.prevHref);
-    }
-    activeEdit = null;
-  }
-
-  function onEditBlur() {
-    commitEdit();
-  }
-
-  function onEditKeydown(e) {
-    e.stopPropagation();
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      commitEdit();
-    } else if (e.key === 'Escape') {
-      e.preventDefault();
-      cancelEdit();
-    }
-  }
-
-  // Nearest enclosing link whose href should be neutralized while editing, so a
-  // click (caret placement) or Enter (commit) doesn't navigate away. Restored
-  // in endEdit; JS-driven router navigation is suppressed in onEditClick.
-  function stashAnchorHref(el) {
-    var anchor = el.tagName === 'A' ? el : (el.closest ? el.closest('a') : null);
-    var prevHref = anchor && anchor.hasAttribute('href') ? anchor.getAttribute('href') : null;
-    if (anchor && prevHref != null) anchor.removeAttribute('href');
-    return { anchor: prevHref != null ? anchor : null, prevHref: prevHref };
-  }
-
-  // Turn `el` into a focused, select-all contenteditable region.
-  function activateEditable(el) {
-    try {
-      el.setAttribute('contenteditable', 'plaintext-only');
-      if (!el.isContentEditable) el.setAttribute('contenteditable', 'true');
-    } catch (err) {
-      el.setAttribute('contenteditable', 'true');
-    }
-    el.style.outline = '2px solid #10b981';
-    // Headers/nav are frequently `user-select: none`, which also blocks
-    // contenteditable editing; force it on (important beats class styles) for
-    // the duration of the edit. Cleared in endEdit (element) / discarded with
-    // the wrapper (text).
-    el.style.setProperty('user-select', 'text', 'important');
-    el.style.setProperty('-webkit-user-select', 'text', 'important');
-    el.addEventListener('blur', onEditBlur);
-    el.addEventListener('keydown', onEditKeydown);
-    el.focus();
-
-    // Select all text so a replacement starts with a clean slate
-    try {
-      var range = document.createRange();
-      range.selectNodeContents(el);
-      var sel = window.getSelection();
-      sel.removeAllRanges();
-      sel.addRange(range);
-    } catch (err) { /* selection is best-effort */ }
-
-    hideOverlay();
-  }
-
-  // Edit a whole pure-text element in place.
-  function beginEdit(el) {
-    if (activeEdit) commitEdit();
-    var href = stashAnchorHref(el);
-    activeEdit = {
-      kind: 'element',
-      element: el,
-      oldText: el.textContent,
-      prevOutline: el.style.outline,
-      anchor: href.anchor,
-      prevHref: href.prevHref,
-    };
-    activateEditable(el);
-  }
-
-  // Edit a single text run inside a mixed-content element (e.g. the leading
-  // text of <h1>Text<span>..</span></h1>). The run is wrapped in a temporary
-  // span so only it becomes editable; the wrapper is removed in endEdit, and
-  // the edit is reported against the owning element's source location.
-  function beginEditTextNode(textNode, sourceEl) {
-    if (activeEdit) commitEdit();
-
-    var parent = textNode.parentElement;
-    var childIndex = Array.prototype.indexOf.call(parent.childNodes, textNode);
-    // Index of this text node among the parent's non-whitespace direct text
-    // runs — lets the server patch the exact run of a multi-run element
-    // (e.g. <h1>A<br/>B<br/>C</h1>), not just the first.
-    var textRunIndex = 0;
-    for (var k = 0; k < parent.childNodes.length; k++) {
-      var cn = parent.childNodes[k];
-      if (cn === textNode) break;
-      if (cn.nodeType === Node.TEXT_NODE && cn.textContent.trim()) textRunIndex++;
-    }
-    var oldText = textNode.textContent;
-    var href = stashAnchorHref(parent);
-
-    var wrap = document.createElement('span');
-    wrap.setAttribute('data-agon-edit-wrap', '');
-    parent.replaceChild(wrap, textNode);
-    wrap.appendChild(textNode);
-
-    activeEdit = {
-      kind: 'text',
-      element: wrap,
-      sourceEl: sourceEl || parent,
-      childIndex: childIndex,
-      textRunIndex: textRunIndex,
-      oldText: oldText,
-      prevOutline: wrap.style.outline,
-      anchor: href.anchor,
-      prevHref: href.prevHref,
-    };
-    activateEditable(wrap);
-  }
-
-  function onEditClick(e) {
-    if (!editEnabled) return;
-
-    var target = e.target;
-    if (isPickerNode(target)) return;
-
-    // Clicks inside the element being edited behave normally (caret moves).
-    // When editing link text, still swallow the event so the app's own click
-    // handlers (e.g. router <Link> navigation) don't fire — caret placement is
-    // the browser default action and survives stopImmediatePropagation.
-    if (activeEdit && (target === activeEdit.element || activeEdit.element.contains(target))) {
-      if (activeEdit.anchor) {
-        e.stopPropagation();
-        e.stopImmediatePropagation();
-      }
-      return;
-    }
-
-    e.preventDefault();
-    e.stopPropagation();
-    e.stopImmediatePropagation();
-
-    if (activeEdit) commitEdit();
-    var res = resolveEditable(target, e.clientX, e.clientY);
-    if (res && res.kind === 'text') {
-      beginEditTextNode(res.textNode, res.element);
-    } else if (res && res.kind === 'element') {
-      beginEdit(res.element);
-    }
-  }
-
-  function enableEdit() {
-    if (editEnabled) return;
-    if (inspectEnabled) disableInspect();
-    editEnabled = true;
-    createOverlay();
-    document.addEventListener('mouseover', onMouseOver, true);
-    document.addEventListener('mouseout', onMouseOut, true);
-    document.addEventListener('click', onEditClick, true);
-    document.body.style.cursor = 'text';
-    console.log('[element-picker] Edit mode ON');
-  }
-
-  function disableEdit() {
-    if (!editEnabled) return;
-    if (activeEdit) commitEdit();
-    editEnabled = false;
-    document.removeEventListener('mouseover', onMouseOver, true);
-    document.removeEventListener('mouseout', onMouseOut, true);
-    document.removeEventListener('click', onEditClick, true);
-    hideOverlay();
-    removeOverlay();
-    document.body.style.cursor = '';
-    console.log('[element-picker] Edit mode OFF');
-  }
-
-  // Parent-driven text set, used for undo/redo of committed edits. When
-  // childIndex is provided the edit targeted a single text run of a
-  // mixed-content element, so only that child node is restored (setting the
-  // element's textContent would clobber its sibling elements).
-  function setText(path, text, childIndex) {
-    var el = null;
-    try { el = document.querySelector(path); } catch (err) { /* bad selector */ }
-    if (!el) {
-      console.warn('[element-picker] arena:set-text target not found:', path);
-      return;
-    }
-    if (activeEdit && activeEdit.element === el) cancelEdit();
-    if (childIndex != null && el.childNodes[childIndex]) {
-      el.childNodes[childIndex].textContent = text;
-    } else {
-      el.textContent = text;
-    }
-  }
-
-  function reportCapability() {
-    var tagged = !!document.querySelector(
-      '[' + SOURCE_ATTR + '], [' + LEGACY_SOURCE_ATTR + ']'
-    );
-    postToParent({ type: 'arena:edit-capability', textEdit: true, tagged: tagged });
-  }
-
-  // ---------------------------------------------------------------- wiring
-
-  window.addEventListener('message', function (e) {
-    if (!e.data || typeof e.data.type !== 'string') return;
-
-    switch (e.data.type) {
-      case 'inspect:mode':
-        if (e.data.enabled) enableInspect();
-        else disableInspect();
-        break;
-      case 'arena:edit-mode':
-        if (e.data.enabled) enableEdit();
-        else disableEdit();
-        break;
-      case 'arena:set-text':
-        setText(e.data.domPath, e.data.text, e.data.childIndex);
-        break;
-      case 'arena:init':
-        reportCapability();
-        break;
-    }
-  });
-
-  // Also support toggling via keyboard for standalone testing:
-  //   Alt+Shift+I — inspect mode, Alt+Shift+E — edit mode
-  document.addEventListener('keydown', function (e) {
-    if (e.altKey && e.shiftKey && e.key === 'I') {
-      inspectEnabled ? disableInspect() : enableInspect();
-    } else if (e.altKey && e.shiftKey && e.key === 'E') {
-      editEnabled ? disableEdit() : enableEdit();
-    }
-  });
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', reportCapability);
-  } else {
-    reportCapability();
-  }
-
-  console.log('[element-picker] Loaded. inspect:mode / arena:edit-mode (or Alt+Shift+I / Alt+Shift+E).');
-})();
-</script>
-  </body>
+  </script>
+</body>
 </html>
