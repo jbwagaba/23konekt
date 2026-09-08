@@ -8,6 +8,7 @@ import {
   Star, Quote, Play, Calendar, Luggage, BadgeCheck, Navigation,
   Briefcase, GraduationCap, Heart, Search, ArrowUp
 } from 'lucide-react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 
 // --- Data ---
 const servicesPreview = [
@@ -1054,6 +1055,7 @@ export default function App() {
           </motion.div>
         )}
       </AnimatePresence>
+      <SpeedInsights />
     </div>
   )
 }
